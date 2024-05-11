@@ -1,0 +1,32 @@
+{
+  "name": "cantonesechurchwords",
+  "version": "1.0.0",
+  "description": "API to retrieve and store Cantonese vocabulary for the Church of Jesus Christ of Latter-day Saints.",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "cantonese",
+    "vocabulary",
+    "words",
+    "characters",
+    "church",
+    "Jesus",
+    "Christ",
+    "saints"
+  ],
+  "author": "Brian Crews",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cantonese-romanisation": "^1.0.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.3.4",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
+  }
+}

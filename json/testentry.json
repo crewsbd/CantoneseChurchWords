@@ -1,0 +1,19 @@
+{
+    "englishWord": "Romanisation",
+    "englishDescription": "Description",
+    "characters": [
+        {
+            "chinese": "拼]",
+            "roman": ["ping"],
+            "yale": ["ping1", "ping3"],
+            "lshk": ["ping3"]
+        },
+        {
+            "chinese": "音",
+            "roman": ["yam"],
+            "yale": ["yam1"],
+            "lshk": ["jam1"]
+        }
+    ],
+    "synonyms": ["663ddf614f79af2b81fffaf9"] 
+}
