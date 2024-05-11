@@ -105,9 +105,12 @@ const postOneVocabulary = async (request, response) => {
         synonyms: request.body.synonyms,
     });
     
+    if (result.errors) {
+        return response.status(400).json({ errors: result.errors });
+    }
+
     console.dir(result);
-    response.status(200).json({id: result.id})
-    //utilities.stubResponse(response);
+    return response.status(200).json({ id: result.id });
 };
 
 /**

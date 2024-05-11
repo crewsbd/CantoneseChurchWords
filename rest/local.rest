@@ -1,5 +1,5 @@
 ### READ
-GET http://localhost:3000/vocabulary/663ddf614f79af2b81fffaf9 HTTP/1.1
+GET http://localhost:3000/vocabulary/663feb532bd8fcb7d54e7a70 HTTP/1.1
 
 ### CREATE
 POST http://localhost:3000/vocabulary HTTP/1.1
@@ -10,17 +10,17 @@ Content-Type: application/json
     "englishDescription": "Description",
     "characters": [
         {
-            "chinese": "BABY!",
+            "chinese": "拼",
             "roman": ["ping"],
             "yale": ["ping1", "ping3"],
             "lshk": ["ping3"]
         },
         {
-            "chinese": "cakes",
+            "chinese": "拼",
             "roman": ["yam"],
             "yale": ["yam1"],
             "lshk": ["jam1"]
         }
     ],
-    "synonyms": ["663ddf614f79af2b81fffaf9"] 
+    "synonyms": [] 
 }
