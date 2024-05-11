@@ -1,7 +1,7 @@
 const validator = require('express-validator');
 const utilities = require('../utilities');
 
-const validation = [
+const validators = [
     validator
         .body('englishWord')
         .trim()
@@ -28,4 +28,17 @@ const validation = [
         .withMessage('Chinese character is invalid'),
 ];
 
-module.exports = { validation };
+/**
+ *
+ * @param {import('express').Request} request
+ * @param {import('express').Response} response
+ */
+const handleErrors = (request, response, next) => {
+    const errors = validator.validationResult(request);
+    if (!errors.isEmpty()) {
+        response.status(400).json({ Errors: errors.array() });
+    }
+    next();
+};
+
+module.exports = { validators, handleErrors };

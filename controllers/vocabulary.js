@@ -97,14 +97,16 @@ const getOneVocabularyByCharacter = async (request, response) => {
  * @param {import('express').Response} response
  */
 const postOneVocabulary = async (request, response) => {
-    console.dir(request.body)
+    // console.dir(request.body)
     const result = await Vocabulary.create({
         englishWord: request.body.englishWord,
         englishDescription: request.body.englishDescription,
         characters: request.body.characters,
         synonyms: request.body.synonyms,
     });
-
+    
+    console.dir(result);
+    response.status(200).json({id: result.id})
     //utilities.stubResponse(response);
 };
 
