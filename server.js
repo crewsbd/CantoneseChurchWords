@@ -14,7 +14,7 @@ process.on('unhandledRejection', (error, origin) => {
     console.log(`Handled rejection`);
 });
 
-app.use(cors({ methods: 'GET,POST,PUT,DELETE', origin: ['HTTPS', 'HTTP'] }));
+app.use(cors({ methods: 'GET,POST,PUT,DELETE', origin: ['HTTPS'] }));
 app.use(bodyParser.json());
 app.use(router);
 
