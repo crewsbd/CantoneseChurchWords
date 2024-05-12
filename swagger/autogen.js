@@ -27,7 +27,7 @@ const document = {
             synonyms: ['663ddf614f79af2b81fffaf9'],
         },
     },
-    host: 'localhost:3000',
+    host: 'cantonese-church-words.onrender.com',
 };
 
 console.log('Generating Swagger');

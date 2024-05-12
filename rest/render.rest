@@ -1,0 +1,68 @@
+### READ
+GET https://cantonese-church-words.onrender.com/vocabulary/66402a888e65dddc988fecb4 HTTP/1.1
+
+### READ 
+GET https://cantonese-church-words.onrender.com/vocabulary/yale/ping1 HTTP/1.1
+
+### READ 
+GET https://cantonese-church-words.onrender.com/vocabulary/roman/gei HTTP/1.1
+
+### READ 
+GET https://cantonese-church-words.onrender.com/vocabulary/lshk/jam1 HTTP/1.1
+
+### CREATE
+POST https://cantonese-church-words.onrender.com/vocabulary HTTP/1.1 
+Content-Type: application/json
+
+{
+    "englishWord": "Romanisation",
+    "englishDescription": "Newly Added Description",
+    "characters": [
+        {
+            "chinese": "拼",
+            "roman": ["ping"],
+            "yale": ["ping1", "ping3"],
+            "lshk": ["ping3"]
+        },
+        {
+            "chinese": "音",
+            "roman": ["yam"],
+            "yale": ["yam1"],
+            "lshk": ["jam1"]
+        }
+    ],
+    "synonyms": [] 
+}
+
+### UPDATE
+PUT https://cantonese-church-words.onrender.com/vocabulary/66402a888e65dddc988fecb4
+Content-Type: application/json
+
+{
+    "englishWord": "Updated PUT Romanisation",
+    "englishDescription": "Updated Description",
+    "characters": [
+        {
+            "chinese": "拼",
+            "roman": ["ping"],
+            "yale": ["ping1", "ping3"],
+            "lshk": ["ping3"]
+        },
+        {
+            "chinese": "拼",
+            "roman": ["yam"],
+            "yale": ["yam1"],
+            "lshk": ["jam1"]
+        }
+    ],
+    "synonyms": [] 
+}
+### DELETE 
+DELETE https://cantonese-church-words.onrender.com/vocabulary/66402a888e65dddc988fecb4
+
+### Character lookup
+GET https://cantonese-church-words.onrender.com/character/督
+
+
+聖餐
+耶穌基督
