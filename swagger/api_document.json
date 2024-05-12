@@ -8,7 +8,8 @@
   "host": "cantonese-church-words.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/": {

@@ -6,6 +6,7 @@ const document = {
         description:
             'API to retrieve and store Cantonese vocabulary for the Church of Jesus Christ of Latter-day Saints.',
     },
+    schemes: ['http', 'https'],
     definitions: {
         Vocabulary: {
             englishWord: 'Romanisation',
