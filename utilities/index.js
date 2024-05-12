@@ -19,13 +19,20 @@ const hasTone = (pingyam) => {
 };
 
 /**
- * 
- * @param {Function} wrappedFunction 
- * @returns 
+ *
+ * @param {Function} wrappedFunction
+ * @returns {Function}
  */
-const handleErrors = (wrappedFunction) => (request, response, next) => {
-  
-}
-    // Promise.resolve(wrappedFunction(request, response, next)).catch(next);
+const errorHandler = (wrappedFunction) => {
+    return async (request, response, next) => {
+        try {
+            await wrappedFunction(request, response, next);
+        } catch (error) {
+            console.log(error);
+            response.status(500).json({ error: 'Unknown server error.' });
+        }
+    };
+};
+// Promise.resolve(wrappedFunction(request, response, next)).catch(next);
 
-module.exports = { stubResponse, isChinese, hasTone };
+module.exports = { stubResponse, isChinese, hasTone, errorHandler };

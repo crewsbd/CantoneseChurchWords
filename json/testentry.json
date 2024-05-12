@@ -1,19 +1,71 @@
-{
-    "englishWord": "Romanisation",
-    "englishDescription": "Description",
-    "characters": [
-        {
-            "chinese": "拼]",
-            "roman": ["ping"],
-            "yale": ["ping1", "ping3"],
-            "lshk": ["ping3"]
-        },
-        {
-            "chinese": "音",
-            "roman": ["yam"],
-            "yale": ["yam1"],
-            "lshk": ["jam1"]
-        }
-    ],
-    "synonyms": ["663ddf614f79af2b81fffaf9"] 
-}
+[
+    {
+        "englishWord": "Romanisation",
+        "englishDescription": "In linguistics, romanization or romanisation is the conversion of text from a different writing system to the Roman script, or a system for doing so.",
+        "characters": [
+            {
+                "chinese": "拼",
+                "roman": ["ping"],
+                "yale": ["ping1", "ping3"],
+                "lshk": ["ping3"]
+            },
+            {
+                "chinese": "音",
+                "roman": ["yam"],
+                "yale": ["yam1"],
+                "lshk": ["jam1"]
+            }
+        ],
+        "synonyms": []
+    },
+    {
+        "englishWord": "Sacrament",
+        "englishDescription": "In the Church of Jesus Christ of Latter-day Saints, the Holy Sacrament of the Lord's Supper, most often simply referred to as the sacrament, is the ordinance in which participants eat bread and drink water in remembrance of the body and blood of Jesus Christ. Normally, the sacrament is provided every Sunday as part of the sacrament meeting in each LDS Church congregation.",
+        "characters": [
+            {
+                "chinese": "聖",
+                "roman": ["sing"],
+                "yale": ["sing3"],
+                "lshk": ["sing3"]
+            },
+            {
+                "chinese": "餐",
+                "roman": ["chaan", "charn"],
+                "yale": ["chaan1"],
+                "lshk": ["caan1"]
+            }
+        ],
+        "synonyms": []
+    },
+    {
+        "englishWord": "Jesus Christ",
+        "englishDescription": "Savior",
+        "characters": [
+            {
+                "chinese": "拼",
+                "roman": ["ye", "yeah", "yeh"],
+                "yale": ["ye4"],
+                "lshk": ["je4"]
+            },
+            {
+                "chinese": "穌",
+                "roman": ["so"],
+                "yale": ["sou1"],
+                "lshk": ["sou1"]
+            },
+            {
+                "chinese": "基",
+                "roman": ["gei", "kee", "kei", "ki"],
+                "yale": ["gei1"],
+                "lshk": ["gei1"]
+            },
+            {
+                "chinese": "督",
+                "roman": ["duk"],
+                "yale": ["duk1"],
+                "lshk": ["duk1"]
+            }
+        ],
+        "synonyms": []
+    }
+]

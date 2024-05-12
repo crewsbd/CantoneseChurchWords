@@ -1,6 +1,17 @@
 const validator = require('express-validator');
 const utilities = require('../utilities');
 
+const idValidator = [
+    validator
+        .param('id')
+        .trim()
+        .toLowerCase()
+        .isLength({ min: 24, max: 24 })
+        .withMessage('Id is the wrong length')
+        .isHexadecimal()
+        .withMessage('Id must be hexidecimal'),
+];
+
 const validators = [
     validator
         .body('englishWord')
@@ -82,4 +93,4 @@ const handleErrors = (request, response, next) => {
     }
 };
 
-module.exports = { validators, handleErrors };
+module.exports = { validators, handleErrors, idValidator };

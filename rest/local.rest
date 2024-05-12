@@ -1,13 +1,46 @@
 ### READ
-GET http://localhost:3000/vocabulary/663feb532bd8fcb7d54e7a70 HTTP/1.1
+GET http://localhost:3000/vocabulary/663fec80a48c6a1dfd66f88c HTTP/1.1
+
+### READ 
+GET http://localhost:3000/vocabulary/yale/ping1 HTTP/1.1
+
+### READ 
+GET http://localhost:3000/vocabulary/roman/gei HTTP/1.1
+
+### READ 
+GET http://localhost:3000/vocabulary/lshk/jam1 HTTP/1.1
 
 ### CREATE
-POST http://localhost:3000/vocabulary HTTP/1.1
+POST http://localhost:3000/vocabulary HTTP/1.1 
 Content-Type: application/json
 
 {
     "englishWord": "Romanisation",
-    "englishDescription": "Description",
+    "englishDescription": "Newly Added Description",
+    "characters": [
+        {
+            "chinese": "拼",
+            "roman": ["ping"],
+            "yale": ["ping1", "ping3"],
+            "lshk": ["ping3"]
+        },
+        {
+            "chinese": "音",
+            "roman": ["yam"],
+            "yale": ["yam1"],
+            "lshk": ["jam1"]
+        }
+    ],
+    "synonyms": [] 
+}
+
+### UPDATE
+PUT http://localhost:3000/vocabulary/663fec80a48c6a1dfd66f88c
+Content-Type: application/json
+
+{
+    "englishWord": "Updated PUT Romanisation",
+    "englishDescription": "Updated Description",
     "characters": [
         {
             "chinese": "拼",
@@ -24,3 +57,12 @@ Content-Type: application/json
     ],
     "synonyms": [] 
 }
+### DELETE 
+DELETE http://localhost:3000/vocabulary/663fc70043f306f27d781eee
+
+### Character lookup
+GET http://localhost:3000/character/督
+
+
+聖餐
+耶穌基督

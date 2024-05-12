@@ -23,7 +23,11 @@
     },
     "/vocabulary/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Vocabulary"
+        ],
+        "summary": "Get a vocabulary word",
+        "description": "Get the vocabulary word by the id specified.",
         "parameters": [
           {
             "name": "id",
@@ -42,23 +46,42 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Vocabulary"
+        ],
+        "summary": "Modify one Cantonese vocabulary word.",
+        "description": "Changes a word in the API",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Vocabulary word",
+            "schema": {
+              "$ref": "#/definitions/Vocabulary"
+            }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Vocabulary"
+        ],
+        "summary": "Delete one vocabulary word.",
+        "description": "Removes the specified word from the API",
         "parameters": [
           {
             "name": "id",
@@ -68,15 +91,22 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       }
     },
     "/vocabulary/yale/{term}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Vocabulary"
+        ],
+        "summary": "Get vocabulary from a yale pingyam.",
+        "description": "Get a list of vocabulary words that have the specified pingyam in them.",
         "parameters": [
           {
             "name": "term",
@@ -97,7 +127,11 @@
     },
     "/vocabulary/roman/{term}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Vocabulary"
+        ],
+        "summary": "Get vocabulary from a romanization word.",
+        "description": "Get a list of vocabulary words that have the specified romanization word in them.",
         "parameters": [
           {
             "name": "term",
@@ -107,15 +141,22 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
     },
     "/vocabulary/lshk/{term}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Vocabulary"
+        ],
+        "summary": "Get vocabulary from an LSHK pingyam.",
+        "description": "Get a list of vocabulary words that have the specified pingyam in them.",
         "parameters": [
           {
             "name": "term",
@@ -136,7 +177,11 @@
     },
     "/vocabulary/char/{term}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Vocabulary"
+        ],
+        "summary": "Get vocabulary from a character.",
+        "description": "Get a list of vocabulary words that have the specified character in them.",
         "parameters": [
           {
             "name": "term",
@@ -157,10 +202,48 @@
     },
     "/vocabulary/": {
       "post": {
-        "description": "",
+        "tags": [
+          "Vocabulary"
+        ],
+        "summary": "Add one Cantonese vocabulary word.",
+        "description": "Adds a new word to the API",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Vocabulary word",
+            "schema": {
+              "$ref": "#/definitions/Vocabulary"
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/character/{character}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "character",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
