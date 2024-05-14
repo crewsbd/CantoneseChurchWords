@@ -7,7 +7,7 @@ const document = {
         description:
             'API to retrieve and store Cantonese vocabulary for the Church of Jesus Christ of Latter-day Saints.',
     },
-    schemes: ['http', 'https'],
+    schemes: [process.env.DEV == 'true' ? 'http' : 'https'],
     definitions: {
         Vocabulary: {
             englishWord: 'Romanisation',
@@ -31,5 +31,5 @@ const document = {
     },
     host: process.env.HOST,
 };
-console.log("Generating Swagger Document")
+console.log('Generating Swagger Document');
 swaggerAutogen('./api_document.json', ['./routes/index.js'], document);
