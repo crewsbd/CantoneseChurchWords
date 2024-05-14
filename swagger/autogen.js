@@ -1,3 +1,4 @@
+require('dotenv').config();
 const swaggerAutogen = require('swagger-autogen');
 
 const document = {
@@ -28,9 +29,7 @@ const document = {
             synonyms: ['663ddf614f79af2b81fffaf9'],
         },
     },
-    host: 'cantonese-church-words.onrender.com',
+    host: process.env.HOST,
 };
-
-console.log('Generating Swagger');
-console.log(__dirname);
+console.log("Generating Swagger Document")
 swaggerAutogen('./api_document.json', ['./routes/index.js'], document);

@@ -4,7 +4,9 @@
   "description": "API to retrieve and store Cantonese vocabulary for the Church of Jesus Christ of Latter-day Saints.",
   "main": "server.js",
   "scripts": {
-    "test": "test"
+    "start": "npm run swagger && node server.js",
+    "test": "test",
+    "swagger": "node ./swagger/autogen.js"
   },
   "keywords": [
     "cantonese",

@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('./swagger/autogen');
+// require('./swagger/autogen'); // Gets out of sync
 
 // Middleware import
 const app = require('express')();

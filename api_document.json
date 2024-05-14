@@ -5,7 +5,7 @@
     "description": "API to retrieve and store Cantonese vocabulary for the Church of Jesus Christ of Latter-day Saints.",
     "version": "1.0.0"
   },
-  "host": "cantonese-church-words.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http",
