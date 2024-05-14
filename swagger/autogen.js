@@ -33,4 +33,4 @@ const document = {
 
 console.log('Generating Swagger');
 console.log(__dirname);
-swaggerAutogen('./api_document.json', ['../routes/index.js'], document);
+swaggerAutogen('./api_document.json', ['./routes/index.js'], document);
