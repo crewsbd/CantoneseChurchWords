@@ -6,6 +6,15 @@ const swaggerRouter = require('swagger-ui-express');
 const swaggerDocument = require('../swagger/api_document.json');
 const passport = require('passport');
 
+
+// Set root route
+router.get('/', (request, response) => {
+    response.send(
+        request.session.user !== undefined
+            ? `Logged in as ${request.session.user.displayName}`
+            : `Logged out`
+    );
+});
 router.use('/vocabulary', vocabularyRouter);
 router.use('/character', characterRouter);
 router.use(

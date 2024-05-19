@@ -1,5 +1,6 @@
 const romanisation = require('cantonese-romanisation');
-const mongoose = require('../database');
+//const mongoose = require('../database');
+const mongoose = require('mongoose');
 
 const utilities = require('../utilities');
 const Vocabulary = require('../models/vocabulary');

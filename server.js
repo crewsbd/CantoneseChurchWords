@@ -6,8 +6,10 @@ const app = require('express')();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const SessionStore = require('connect-mongodb-session')(session);
 const passport = require('passport');
 const OauthStrategy = require('passport-github2').Strategy;
+const mongoose = require('./database');
 
 // Routes import
 const router = require('./routes');
@@ -20,20 +22,34 @@ process.on('unhandledRejection', (error, origin) => {
     console.log(`Handled rejection`);
 });
 
+// Session store
+console.log('Initializing session store');
+const sessionStore = new SessionStore({
+    uri: process.env.MONGODB_URI,
+    collection: 'sessions',
+});
+console.log('session error handling');
+sessionStore.on('error', () => {
+    console.error('Session store error', error);
+});
+
 // Middleware implemented
+app.use(cors({ methods: 'GET,POST,PUT,PATCH,DELETE' }));
+app.use(bodyParser.json());
+console.log('Setting up session.');
 app.use(
     session({
         secret: 'secret',
         resave: false,
         saveUninitialized: true,
+        store: sessionStore,
     })
 );
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(cors({ methods: 'GET,POST,PUT,PATCH,DELETE' }));
-app.use(bodyParser.json());
 
 // Configure passport
+console.log('Configure passport');
+app.use(passport.initialize());
+app.use(passport.session());
 passport.use(
     new OauthStrategy(
         {
@@ -48,21 +64,14 @@ passport.use(
 );
 // Set user serializer
 passport.serializeUser((user, done) => {
-    done(null, user);
+    done(null, user); // Is this to put a user in a DB?
 });
 // Set user deserializer
 passport.deserializeUser((user, done) => {
     done(null, user);
 });
-// Set root route
-app.get('/', (request, response) => {
-    response.send(
-        request.session.user !== undefined
-            ? `Logged in as ${request.session.user.displayName}`
-            : `Logged out`
-    );
-});
 
+// All routes are here.
 app.use(router);
 
 // Start API
