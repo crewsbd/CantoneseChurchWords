@@ -10,6 +10,7 @@ const SessionStore = require('connect-mongodb-session')(session);
 const passport = require('passport');
 const OauthStrategy = require('passport-github2').Strategy;
 const mongoose = require('./database');
+const userModel = require('./models/user');
 
 // Routes import
 const router = require('./routes');
@@ -19,7 +20,7 @@ process.on('uncaughtException', (error, origin) => {
     console.log(`${process.stderr.fd}`);
 });
 process.on('unhandledRejection', (error, origin) => {
-    console.log(`Handled rejection`);
+    console.log(`Handled rejection ${error}`);
 });
 
 // Session store
@@ -57,7 +58,20 @@ passport.use(
             clientSecret: process.env.GITHUB_CLIENT_SECRET,
             callbackURL: process.env.CALLBACK_URL,
         },
-        function (accessToken, refreshToken, profile, done) {
+        async function (accessToken, refreshToken, profile, done) {
+            // Add new user if needed
+            let user = await userModel.findOne({id: profile.id});
+
+            if(!user) { // add them
+                user = new userModel({
+                    id: profile.id,
+                    displayName: profile.displayName,
+                    userName: profile.username,
+                    profileUrl: profile.profileUrl,
+                    authProvider: profile.provider
+                })
+                await user.save();
+            }
             return done(null, profile);
         }
     )
